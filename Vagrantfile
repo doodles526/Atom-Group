@@ -2,19 +2,12 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-    # All Vagrant configuration is done here. The most common configuration
-    # options are documented and commented below. For a complete reference,
-    # please see the online documentation at vagrantup.com.
-
     # Every Vagrant virtual environment requires a box to build off of.
-    config.vm.box = "base"
+    config.vm.box = "centos"
 
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
-    # config.vm.box_url = "http://domain.com/path/to/above.box"
-
-    # Boot with a GUI so you can see the screen. (Default is headless)
-    # config.vm.boot_mode = :gui
+    config.vm.box_url = "http://vagrant-centos-6.s3.amazonaws.com/centos-6.box"
 
     # Assign this VM to a host-only network IP, allowing you to access it
     # via the IP. Host-only networks can talk to the host machine as well as
@@ -40,20 +33,9 @@ Vagrant::Config.run do |config|
     # are contained in a directory path relative to this Vagrantfile.
     # You will need to create the manifests directory and a manifest in
     # the file base.pp in the manifests_path directory.
-    #
-    # An example Puppet manifest to provision the message of the day:
-    #
-    # #
-    # # File { owner => 0, group => 0, mode => 0644 }
-    # #
-    # # file { '/etc/motd':
-    # #   content => "Welcome to your Vagrant-built virtual machine!
-    # #               Managed by Puppet.\n"
-    # # }
-    #
     config.vm.provision :puppet do |puppet|
 	puppet.manifests_path = "puppet/manifests"
-	puppet.manifest_file  = "base.pp"
+	puppet.manifest_file  = "centos.pp"
 	puppet.module_path    = "puppet/modules"
     end
 end
