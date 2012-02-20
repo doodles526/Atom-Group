@@ -6,10 +6,10 @@ You have found the Atom-Group repository. CONGRATS!!!
 
 ## Vagrant
 
-Install [Vagrant](http://vagrantup.com/) and download the Ubuntu Lucid 32bit VirtualBox image:
+Install [Vagrant](http://vagrantup.com/) and download the CentOS 6 VirtualBox image:
 
 	$ gem install vagrant
-	$ vagrant box add base http://files.vagrantup.com/lucid32.box
+	$ vagrant box add base http://vagrant-centos-6.s3.amazonaws.com/centos-6.box
 
 Then to spin up a VM:
 
