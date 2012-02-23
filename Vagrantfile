@@ -7,7 +7,8 @@ Vagrant::Config.run do |config|
 
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
-    config.vm.box_url = "http://vagrant-centos-6.s3.amazonaws.com/centos-6.box"
+    config.vm.box_url = "./centos.box"
+ 
 
     # Assign this VM to a host-only network IP, allowing you to access it
     # via the IP. Host-only networks can talk to the host machine as well as
