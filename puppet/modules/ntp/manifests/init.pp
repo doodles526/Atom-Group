@@ -14,6 +14,6 @@ class ntp {
 		path => '/etc/ntp.conf',
 		ensure => file,
 		require => Package['ntp'],
-		content => template("ntp/ntp_default.erb")
+		content => template('ntp/ntp_default.erb'),
 	}
 }

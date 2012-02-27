@@ -3,3 +3,4 @@ group { "puppet":
 }
 
 include ntp
+include mpi
