@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
 
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
-    config.vm.box_url = "./centos.box"
+    config.vm.box_url = "https://github.com/downloads/doodles526/Atom-Group/centos.box"
  
 
     # Assign this VM to a host-only network IP, allowing you to access it

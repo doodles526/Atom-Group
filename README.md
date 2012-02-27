@@ -9,7 +9,7 @@ You have found the Atom-Group repository. CONGRATS!!!
 Install [Vagrant](http://vagrantup.com/) and download the CentOS 6 VirtualBox image:
 
 	$ gem install vagrant
-	$ vagrant box add centos http://vagrant-centos-6.s3.amazonaws.com/centos-6.box
+	$ vagrant box add centos https://github.com/downloads/doodles526/Atom-Group/centos.box
 
 Then to spin up a VM (note: the process will start in the background):
 
