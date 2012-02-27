@@ -5,10 +5,18 @@ Vagrant::Config.run do |config|
     # Every Vagrant virtual environment requires a box to build off of.
     config.vm.box = "centos"
 
+    # Ensure that VM is emulating 64 bit
+    config.vm.customize [
+    	"modifyvm", :id,
+	"--ostype", "RedHat_64"
+    ]
+
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
-    config.vm.box_url = "https://github.com/downloads/doodles526/Atom-Group/centos.box"
- 
+    config.vm.box_url = "http://web.engr.oregonstate.edu/~strassek/centos.box"
+
+    # Boot with a GUI so you can see the screen. (Default is headless)
+    # config.vm.boot_mode = :gui
 
     # Assign this VM to a host-only network IP, allowing you to access it
     # via the IP. Host-only networks can talk to the host machine as well as
