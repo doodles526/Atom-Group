@@ -4,7 +4,6 @@ class ntp {
 	}
 
 	service { 'ntp':
-		name => 'ntpd',
 		ensure => running,
 		enable => true,
 		subscribe => File['ntp.conf'],

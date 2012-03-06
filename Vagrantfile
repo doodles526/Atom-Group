@@ -3,17 +3,17 @@
 
 Vagrant::Config.run do |config|
     # Every Vagrant virtual environment requires a box to build off of.
-    config.vm.box = "centos"
+    config.vm.box = "base"
 
     # Ensure that VM is emulating 64 bit
     config.vm.customize [
     	"modifyvm", :id,
-	"--ostype", "RedHat_64"
+	"--ostype", "Ubuntu"
     ]
 
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
-    config.vm.box_url = "https://github.com/downloads/doodles526/Atom-Group/centos.box"
+    config.vm.box_url = "https://files.vagrantup.com/lucid32.box"
 
     # Boot with a GUI so you can see the screen. (Default is headless)
     # config.vm.boot_mode = :gui
@@ -44,7 +44,7 @@ Vagrant::Config.run do |config|
     # the file base.pp in the manifests_path directory.
     config.vm.provision :puppet do |puppet|
 	puppet.manifests_path = "puppet/manifests"
-	puppet.manifest_file  = "centos.pp"
+	puppet.manifest_file  = "init.pp"
 	puppet.module_path    = "puppet/modules"
     end
 end
