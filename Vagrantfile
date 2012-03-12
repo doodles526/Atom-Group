@@ -3,30 +3,22 @@
 
 Vagrant::Config.run do |config|
     # Every Vagrant virtual environment requires a box to build off of.
-<<<<<<< HEAD
     config.vm.box = "Debian"
-=======
-    config.vm.box = "base"
->>>>>>> a42f126357bc8a5916cdd933fb34498907562426
+
 
     # Ensure that VM is emulating 64 bit
     config.vm.customize [
     	"modifyvm", :id,
-<<<<<<< HEAD
 	"--ostype", "Debian_64"
    ]
 
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
     config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/debian_lenny_64.box"
-=======
-	"--ostype", "Ubuntu"
-    ]
 
-    # The url from where the 'config.vm.box' box will be fetched if it
-    # doesn't already exist on the user's system.
-    config.vm.box_url = "https://files.vagrantup.com/lucid32.box"
->>>>>>> a42f126357bc8a5916cdd933fb34498907562426
+
+
+
 
     # Boot with a GUI so you can see the screen. (Default is headless)
     # config.vm.boot_mode = :gui
