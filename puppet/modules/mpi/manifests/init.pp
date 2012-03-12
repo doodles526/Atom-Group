@@ -1,6 +1,6 @@
 class mpi {
 	package { 'mpi':
-		name => 'openmpi',
+		name => 'openmpi-bin',
 		ensure => installed,
 	}
 

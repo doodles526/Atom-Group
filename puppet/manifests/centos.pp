@@ -1,21 +1,22 @@
 group {"puppet":
-	ensure => "present",
+	ensure => "present"
 	}
 
-include ntp
-include mpi
+#include ntp
+#include mpi
+include ssh
 
 user{"clstr-usr":
 	ensure => "present",
 	home => "/home/clstr-usr",
-	shell => "/bin/bash"	
-	}
-
-
+	shell => "/bin/bash",	
+	password => '$6$g6/Ighfv$L4y63oByk0RiQmCtoPGlbG2IOX1wkjrusElnAJBlKESOXTAG27NFJVZ8hczbSN0roWLzzNxOvpyP1ijU5vR8X1'	
+}
 
 
 
 group{ "clstr-usr":
+	ensure => "present",
 	gid => 12346,
 	require => User["clstr-usr"]
 	}
