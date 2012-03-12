@@ -2,6 +2,10 @@ group { "puppet":
    	ensure => "present",
 }
 
+exec { "apt-get update":
+	command => "/usr/bin/apt-get update"
+}
+
 user { "clstr-usr":
 	ensure => "present",
 	home => "/home/clstr-usr",
@@ -22,7 +26,4 @@ file { "/home/clstr-usr/":
 }
 
 include ntp
-#include mpi
-
-
-	
+include mpi
