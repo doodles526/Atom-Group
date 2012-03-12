@@ -8,7 +8,7 @@ exec { "apt-get update":
 
 
 #include ntp
-#include mpi
+include mpi
 include ssh
 
 
