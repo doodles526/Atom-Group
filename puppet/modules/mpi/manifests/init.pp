@@ -5,30 +5,23 @@ class mpi {
 	}
 
 	file { 'hostfile':
-		path => '/etc/openmpi-x86_64/openmpi-default-hostfile',
+		path => '/etc/openmpi/openmpi-default-hostfile',
 		ensure => file,
 		require => Package['mpi'],
-		content => template('mpi/hostfile.erb'),
+		content => template('mpi/openmpi-default-hostfile.erb'),
 	}
 
 	file { 'totalview':
-		path => '/etc/openmpi-x86_64/openmpi-totalview.tcl',
+		path => '/etc/openmpi/openmpi-totalview.tcl',
 		ensure => file,
 		require => Package['mpi'],
-		content => template('mpi/totalview.erb'),
+		content => template('mpi/openmpi-totalview.tcl.erb'),
 	}
 
 	file { 'mca-params':
-		path => '/etc/openmpi-x86_64/openmpi-mca-params.conf',
+		path => '/etc/openmpi/openmpi-mca-params.conf',
 		ensure => file,
 		require => Package['mpi'],
-		content => template('mpi/mca-params.erb'),
-	}
-
-	file { 'vt-java-filter':
-		path => '/etc/openmpi-x86_64/vt-java-default-filter.spec',
-		ensure => file,
-		require => Package['mpi'],
-		content => template('mpi/vt-java-filter.erb'),
+		content => template('mpi/openmpi-mca-params.conf.erb'),
 	}
 }
