@@ -7,10 +7,10 @@ exec { "apt-get update":
 }
 
 
-#include ntp
+include ntp
 include mpi
 include ssh
-
+include munge
 
 user { "clstr-usr":
 	ensure => "present",
