@@ -11,6 +11,7 @@ include ntp
 include mpi
 include ssh
 include munge
+#include slurm
 
 user { "clstr-usr":
 	ensure => "present",
