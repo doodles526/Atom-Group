@@ -6,7 +6,8 @@ class slurm	{
 
 	
 	package{ "slurm-llnl":
-		ensure => "installed"
-	}
+		ensure => "installed",
+		require => Exec['apt-get update']
+}
 
 }

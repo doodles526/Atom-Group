@@ -1,7 +1,8 @@
 class ntp {
 	package { 'ntp':
 		ensure => installed,
-	}
+		require => Exec['apt-get update']
+}
 
 	service { 'ntp':
 		ensure => running,

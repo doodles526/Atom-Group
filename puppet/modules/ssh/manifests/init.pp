@@ -5,11 +5,13 @@ case $operatingsystem {
       package { "openssh":
         ensure => installed,
         alias => "ssh",
-      }
+      	require => Exec['apt-get update']
+	  }
     }
     /Debian|Ubuntu/: {
       package { "ssh":
-        ensure => installed
+        ensure => installed,
+		require => Exec['apt-get update']
       }
     }
   }

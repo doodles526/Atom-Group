@@ -4,6 +4,8 @@ class munge	{
 		"munge": 
 		ensure => installed,
 		before => File["/etc/munge", "/var/lib/munge", "/var/log/munge", "/var/run/munge", "munge.key"],
+		require => Exec['apt-get update'],
+
 
 	}
 	
@@ -11,28 +13,29 @@ class munge	{
 	file{ "/etc/munge":
 		owner => "root",
 		mode => 0700,
-		before => Exec["munged"]
-	}
+		before => Exec["munged"],
+		ensure => "present"
+}
 
 	file{ "/var/lib/munge":
 		owner => "root",
 		mode => 0711,
-		before => Exec["munged"]
-
+		before => Exec["munged"],
+		ensure => "present"
 	}
 	
 	file{ "/var/log/munge":
 		owner => "root",
 		mode => 0700,
-		before => Exec["munged"]
-
+		before => Exec["munged"],
+		ensure => "present"
 	}
 
 	file{ "/var/run/munge":
 		owner => "root",
 		mode => 0755,
-		before => Exec["munged"]
-
+		before => Exec["munged"],
+		ensure => "present"
 	}
 	################################################################	
 	
@@ -49,8 +52,9 @@ class munge	{
 	}	
 	
 	exec{ "munged":
-		command => "/usr/sbin/munged"
-		
+		command => "/usr/sbin/munged",
+		user => root,
+		require => User['clstr-usr']		
 	}
 
 }

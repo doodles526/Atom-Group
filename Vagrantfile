@@ -9,12 +9,12 @@ Vagrant::Config.run do |config|
 	    # Ensure that VM is emulating 64 bit
 	    master_config.vm.customize [
 		"modifyvm", :id,
-		"--ostype", "Debian_64"
+		"--ostype", "Debian"
 	   ]
 
 	    # The url from where the 'config.vm.box' box will be fetched if it
 	    # doesn't already exist on the user's system.
-	    master_config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/debian_lenny_64.box"
+	    master_config.vm.box_url = "http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box"
 
 	    master_config.vm.provision :puppet do |puppet|
 			puppet.manifests_path = "puppet/manifests"
@@ -30,12 +30,12 @@ Vagrant::Config.run do |config|
 	    # Ensure that VM is emulating 64 bit
 	    slave_config.vm.customize [
 		"modifyvm", :id,
-		"--ostype", "Debian_64"
+		"--ostype", "Debian"
 	   ]
 
 	    # The url from where the 'config.vm.box' box will be fetched if it
 	    # doesn't already exist on the user's system.
-	    slave_config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/debian_lenny_64.box"
+	    slave_config.vm.box_url = "http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box"
 
 	    slave_config.vm.provision :puppet do |puppet|
 			puppet.manifests_path = "puppet/manifests"

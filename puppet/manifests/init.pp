@@ -3,14 +3,15 @@ group {"puppet":
 	}
 
 exec { "apt-get update":
-        command => "/usr/bin/apt-get update"
+        command => "/usr/bin/apt-get update",
+#		before => User['clstr-usr']
 }
 
 
 include ntp
 include mpi
 include ssh
-include munge
+#include munge
 #include slurm
 
 user { "clstr-usr":

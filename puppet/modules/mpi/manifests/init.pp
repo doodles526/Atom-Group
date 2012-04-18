@@ -2,6 +2,7 @@ class mpi {
 	package { 'mpi':
 		name => 'openmpi-bin',
 		ensure => installed,
+		require => Exec['apt-get update']
 	}
 
 	file { 'hostfile':
